@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User
+from .models import User,SaveQueryData
 from django.contrib.auth.hashers import make_password
 
 class UserSerializer(serializers.ModelSerializer):
@@ -16,3 +16,9 @@ class UserSerializer(serializers.ModelSerializer):
         extra_kwargs={
             'password':{'write_only':True}
             }
+
+
+class QuerySerializer(serializers.ModelSerializer):
+    class Meta:
+        model=SaveQueryData
+        fields="__all__"

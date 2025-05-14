@@ -4,7 +4,8 @@ import { Container, Row, Col, Nav, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import {
   FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaTwitter, FaFacebookF,
-  FaLinkedinIn, FaInstagram, FaYoutube, FaAngleRight, FaChevronUp
+  FaLinkedinIn, FaInstagram, FaYoutube, FaAngleRight, FaChevronUp,
+  FaPinterest
 } from 'react-icons/fa';
 import logoImage from '../../assets/websitelogo.jpeg'; // UPDATE THIS PATH or remove if no logo
 
@@ -72,7 +73,7 @@ function Footer() {
             <ul className="list-unstyled footer-contact-info">
               <li className="mb-2 d-flex align-items-start">
                 <FaMapMarkerAlt size={16} className="me-3 mt-1 text-primary flex-shrink-0" />
-                <span className="small">E-6,7, KH.NO-103, PANCHSHEEL COLONY, LAL KUAN LANDMARK SHIV MANDIR, Ghaziabad, Uttar Pradesh, 201009</span>
+                <span className="small text-white-50 mb-3 pe-lg-3">E-6,7, KH.NO-103, PANCHSHEEL COLONY, LAL KUAN LANDMARK SHIV MANDIR, Ghaziabad, Uttar Pradesh, 201009</span>
               </li>
               <li className="mb-2 d-flex align-items-center">
                 <FaPhoneAlt size={14} className="me-3 text-primary flex-shrink-0" />
@@ -119,7 +120,7 @@ function Footer() {
                   <Link to={newsItem.link} className="text-white-50 small hover-primary-text d-block text-decoration-none">
                     {newsItem.title}
                   </Link>
-                  <small className="text-muted d-block" style={{fontSize: '0.75rem'}}>{newsItem.date}</small>
+                  <small className="text-muted d-block text-white-50" style={{fontSize: '0.75rem'}}>{newsItem.date}</small>
                 </li>
               ))}
             </ul>
@@ -132,14 +133,14 @@ function Footer() {
         <Container>
           <Row className="align-items-center">
             <Col md={6} className="text-center text-md-start mb-2 mb-md-0">
-              <p className="small mb-0 text-white-50">© {currentYear} Your Brand Name. All Rights Reserved.</p>
+              <p className="small mb-0 text-white">© {currentYear} Your Brand Name. All Rights Reserved.</p>
             </Col>
             <Col md={6} className="text-center text-md-end">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white-50 me-3 fs-5 hover-primary-text"><FaFacebookF /></a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white-50 me-3 fs-5 hover-primary-text"><FaTwitter /></a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white-50 me-3 fs-5 hover-primary-text"><FaLinkedinIn /></a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white-50 me-3 fs-5 hover-primary-text"><FaInstagram /></a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-white-50 fs-5 hover-primary-text"><FaYoutube /></a>
+              <a href="https://www.facebook.com/profile.php?id=61575823132849" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-5 hover-primary-text"><FaFacebookF /></a>
+              <a href="https://in.pinterest.com/awakeningcoins/" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-5 hover-primary-text"><FaPinterest /></a>
+              <a href="https://www.linkedin.com/in/awakening-coins-b61b2034a/" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-5 hover-primary-text"><FaLinkedinIn /></a>
+              <a href="https://www.instagram.com/awakeningcoinsnew/" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-5 hover-primary-text"><FaInstagram /></a>
+              <a href="https://www.youtube.com/@AwakeningCoinsnew" target="_blank" rel="noopener noreferrer" className="text-white fs-5 hover-primary-text"><FaYoutube /></a>
             </Col>
           </Row>
         </Container>

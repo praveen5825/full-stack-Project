@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.response import Response
-from .models import User
-from .serializers import UserSerializer
+from .models import User,SaveQueryData
+from .serializers import UserSerializer,QuerySerializer
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -93,3 +93,9 @@ class UserViewSet(viewsets.ModelViewSet):
             return Response({
                 'message':"old_password is incorrect"
             },status=status.HTTP_400_BAD_REQUEST)
+        
+
+class QuerySaveViewSet(viewsets.ModelViewSet):
+    queryset=SaveQueryData.objects.all()
+    serializer_class=QuerySerializer
+    permission_classes=[AllowAny]

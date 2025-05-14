@@ -254,7 +254,7 @@ function AboutPage() {
             <div className="about-content-text-themed">
               <h3>STAND OUT OF THE CROWD. GENERATE MORE LEADS AND CLOSE MORE DEALS!</h3>
               <p>
-                Global IT Sources is a trusted and certified Digital Marketing agency
+                Awakening Coins Sources is a trusted and certified Digital Marketing agency
                 comprising of experienced marketing professionals and maestros that are
                 highly qualified and have helped generate incredible sales for their clients
                 and customers.
@@ -265,7 +265,7 @@ function AboutPage() {
                 patterns of choosing and buying products and services has changed.
               </p>
               <p>
-                Hence, Global IT Sources has developed certain strategies and automation
+                Hence, Awakening Coins Sources has developed certain strategies and automation
                 in place for Web Design, SEO, Content Writing, Social Media Marketing &
                 even paid Google Ad SEnice (Google PPC Management) to empower your business. We understand how these five pillars work together to
                 help to increase your sales and marketing efficiency and generate more ROI.

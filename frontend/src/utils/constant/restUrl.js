@@ -7,4 +7,7 @@ export const REST_URL_OBJ = {
     RESET_PASSWORD: "auth/resetPassword/",
     FORGOT_PASSWORD: "auth/forgetPassword/",
   },
+  RAISE_QUERY_FORM:{
+    SAVE_DATA:"raisequeryform/savedata"
+  }
 };

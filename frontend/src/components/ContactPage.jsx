@@ -2,7 +2,9 @@
 
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, ListGroup } from 'react-bootstrap';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaPinterest, FaInstagram } from 'react-icons/fa';
+import { REST_URL_OBJ } from '../utils/constant/restUrl';
+import httpClient from '../utils/httpclint';
 
 
 const GitsCloneStyles = () => (
@@ -148,13 +150,40 @@ function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form Data Submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    // setFormData({ name: '', email: '', mobile: '', website: '', budget: '', requirement: '' });
-  };
   
+
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await httpClient(
+        "post",
+        REST_URL_OBJ.AUTH.LOGIN,
+        formData
+      );
+
+      if (response?.message === "login successful") {
+        showToast("success", "Login Successful!");
+      } else {
+        showToast("error", "Invalid Credentials! Please try again.");
+      }
+    } catch (error) {
+      if (error.response) {
+        showToast(
+          "error",
+          error.response.data?.message || "Something went wrong!"
+        );
+      } else if (error.request) {
+        showToast(
+          "error",
+          "No response from the server. Please check your connection."
+        );
+      } else {
+        showToast("error", "An unexpected error occurred. Please try again.");
+      }
+    }
+  };
+
+
   // If you want the map section from globalit, you'd need its specific iframe code
   // const mapEmbedCode = `...`;
 
@@ -287,17 +316,21 @@ function ContactPage() {
 
               <ListGroup className="social-links-gits mt-4">
                 <ListGroup.Item as="a" href="https://www.facebook.com/profile.php?id=61575823132849" target="_blank">
-                  <FaFacebookF className="social-icon" /> Like Us facebook
+                  <FaFacebookF className="social-icon" /> Follow Us facebook
                 </ListGroup.Item>
-                <ListGroup.Item as="a" href="https://twitter.com/globalitsources" target="_blank">
-                  <FaTwitter className="social-icon" /> Follow Us twitter
+                <ListGroup.Item as="a" href="https://in.pinterest.com/awakeningcoins/" target="_blank">
+                  <FaPinterest className="social-icon" /> Follow Us Pintrest
                 </ListGroup.Item>
-                <ListGroup.Item as="a" href="https://youtube.com/c/GlobalITSources" target="_blank"> {/* Example YT Link */}
-                  <FaYoutube className="social-icon" /> Follow Us You Tube
+                <ListGroup.Item as="a" href="https://www.youtube.com/@AwakeningCoinsnew" target="_blank"> {/* Example YT Link */}
+                  <FaYoutube className="social-icon" /> Follow Us YouTube
                 </ListGroup.Item>
                 <ListGroup.Item as="a" href="https://www.linkedin.com/in/awakening-coins-b61b2034a/" target="_blank">
                   <FaLinkedinIn className="social-icon" /> Follow Us linkedin
                 </ListGroup.Item>
+                <ListGroup.Item as="a" href="https://www.instagram.com/awakeningcoinsnew/" target="_blank">
+                  <FaInstagram className="social-icon" /> Follow Us Instagram
+                </ListGroup.Item>
+
               </ListGroup>
             </div>
           </Col>
