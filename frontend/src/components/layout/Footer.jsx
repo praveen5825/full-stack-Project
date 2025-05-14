@@ -49,9 +49,10 @@ function Footer() {
       behavior: 'smooth'
     });
   };
+  const darkBgColor = '#0A192F';         // Very dark navy/charcoal for the header background
 
   return (
-    <footer className="bg-dark text-light position-relative">
+    <footer className="${darkBgColor}text-light position-relative"style={{backgroundColor:darkBgColor}}>
       {/* Main Footer Content */}
       <Container className="py-5">
         <Row className="gy-4 gy-lg-0"> {/* Gutters for vertical spacing on small screens */}
