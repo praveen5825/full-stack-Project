@@ -99,3 +99,14 @@ class QuerySaveViewSet(viewsets.ModelViewSet):
     queryset=SaveQueryData.objects.all()
     serializer_class=QuerySerializer
     permission_classes=[AllowAny]
+
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({
+                "message": "Your query has been submitted. Our team will get back to you shortly.",
+                "data": serializer.data
+            }, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

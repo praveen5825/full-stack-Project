@@ -8,6 +8,6 @@ export const REST_URL_OBJ = {
     FORGOT_PASSWORD: "auth/forgetPassword/",
   },
   RAISE_QUERY_FORM:{
-    SAVE_DATA:"raisequeryform/savedata"
+    SAVE_DATA:"auth/contact/"
   }
 };

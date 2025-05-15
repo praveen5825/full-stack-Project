@@ -11,6 +11,8 @@ import HomePage from './components/HomePage';
 import './App.css'; // Your custom app-wide styles
 import ContactPage from './components/ContactPage';
 import AboutPage from './components/AboutPage';
+import ServicesPage from './components/ServicesPage';
+import ChatWidget from './components/ChatWidget';
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <main style={{ flex: 1 }}> {/* This makes the main content area take up available space */}
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/services" element={<ServicesPage />} />
             <Route path="/contact" element={<ContactPage />}/>
             <Route path="/about" element={<AboutPage />}/>
             {/* Add other routes here later */}
@@ -28,6 +31,7 @@ function App() {
             {/* <Route path="/cart" element={<CartPage />} /> */}
           </Routes>
         </main>
+        <ChatWidget />
         <Footer />
       </div>
     </Router>

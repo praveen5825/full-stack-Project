@@ -136,9 +136,9 @@ function Footer() {
               <p className="small mb-0 text-white">© {currentYear} Your Brand Name. All Rights Reserved.</p>
             </Col>
             <Col md={6} className="text-center text-md-end">
-              <a href="https://www.facebook.com/profile.php?id=61575823132849" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-5 hover-primary-text"><FaFacebookF /></a>
+              <a href="https://www.facebook.com/profile.php?id=61575380657504" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-5 hover-primary-text"><FaFacebookF /></a>
               <a href="https://in.pinterest.com/awakeningcoins/" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-5 hover-primary-text"><FaPinterest /></a>
-              <a href="https://www.linkedin.com/in/awakening-coins-b61b2034a/" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-5 hover-primary-text"><FaLinkedinIn /></a>
+              <a href="https://www.linkedin.com/in/awakening-coins-464104363/" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-5 hover-primary-text"><FaLinkedinIn /></a>
               <a href="https://www.instagram.com/awakeningcoinsnew/" target="_blank" rel="noopener noreferrer" className="text-white me-3 fs-5 hover-primary-text"><FaInstagram /></a>
               <a href="https://www.youtube.com/@AwakeningCoinsnew" target="_blank" rel="noopener noreferrer" className="text-white fs-5 hover-primary-text"><FaYoutube /></a>
             </Col>

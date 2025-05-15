@@ -7,6 +7,7 @@ import { REST_URL_OBJ } from '../utils/constant/restUrl';
 import httpClient from '../utils/httpclint';
 
 
+
 const GitsCloneStyles = () => (
   <style type="text/css">{`
     .contact-page-gits-clone {
@@ -136,10 +137,10 @@ function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    mobile: '',
-    website: '',
+    phone_number: '',
+    website_link: '',
     budget: '', // Budget field not in the screenshot, but keeping it for now
-    requirement: ''
+    query: ''
   });
 
   const handleChange = (e) => {
@@ -151,37 +152,39 @@ function ContactPage() {
   };
 
   
-
 const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await httpClient(
-        "post",
-        REST_URL_OBJ.AUTH.LOGIN,
-        formData
-      );
+  e.preventDefault();
+  try {
+    const response = await httpClient(
+      "post",
+      REST_URL_OBJ.RAISE_QUERY_FORM.SAVE_DATA,
+      formData
+    );
 
-      if (response?.message === "login successful") {
-        showToast("success", "Login Successful!");
-      } else {
-        showToast("error", "Invalid Credentials! Please try again.");
-      }
-    } catch (error) {
-      if (error.response) {
-        showToast(
-          "error",
-          error.response.data?.message || "Something went wrong!"
-        );
-      } else if (error.request) {
-        showToast(
-          "error",
-          "No response from the server. Please check your connection."
-        );
-      } else {
-        showToast("error", "An unexpected error occurred. Please try again.");
-      }
+    if (response?.message) {
+      alert("Your query has been submitted successfully. Our team will contact you shortly.");
+      setFormData({
+        name: "",
+        email: "",
+        phone_number: "",
+        website_link: "",
+        query: "",
+        budget: ""
+      });
+    } else {
+      alert("Submission failed. Please try again.");
     }
-  };
+  } catch (error) {
+    if (error.response) {
+      alert(error.response.data?.message || "Something went wrong!");
+    } else if (error.request) {
+      alert("No response from the server. Please check your connection.");
+    } else {
+      alert("An unexpected error occurred. Please try again.");
+    }
+  }
+};
+
 
 
   // If you want the map section from globalit, you'd need its specific iframe code
@@ -209,7 +212,6 @@ const handleSubmit = async (e) => {
                       placeholder="Name*" 
                       value={formData.name} 
                       onChange={handleChange} 
-                      required 
                       className="form-control-gits" 
                     />
                   </Form.Group>
@@ -234,11 +236,10 @@ const handleSubmit = async (e) => {
                 {/* <Form.Label className="form-label-gits">Mobile*</Form.Label> */}
                 <Form.Control 
                   type="tel" 
-                  name="mobile" 
+                  name="phone_number" 
                   placeholder="Mobile*" 
-                  value={formData.mobile} 
+                  value={formData.phone_number} 
                   onChange={handleChange} 
-                  required 
                   className="form-control-gits" 
                 />
               </Form.Group>
@@ -249,9 +250,9 @@ const handleSubmit = async (e) => {
                     {/* <Form.Label className="form-label-gits">Website</Form.Label> */}
                     <Form.Control 
                       type="url" 
-                      name="website" 
+                      name="website_link" 
                       placeholder="Website*" // In screenshot it's Website*
-                      value={formData.website} 
+                      value={formData.website_link} 
                       onChange={handleChange} 
                       className="form-control-gits" 
                     />
@@ -276,10 +277,10 @@ const handleSubmit = async (e) => {
                 {/* <Form.Label className="form-label-gits">Your Requirement*</Form.Label> */}
                 <Form.Control 
                   as="textarea" 
-                  name="requirement" 
+                  name="query" 
                   rows={5} 
                   placeholder="Your Requirement*" 
-                  value={formData.requirement} 
+                  value={formData.query} 
                   onChange={handleChange} 
                   required 
                   className="form-control-gits" 
@@ -315,7 +316,7 @@ const handleSubmit = async (e) => {
               </p>
 
               <ListGroup className="social-links-gits mt-4">
-                <ListGroup.Item as="a" href="https://www.facebook.com/profile.php?id=61575823132849" target="_blank">
+                <ListGroup.Item as="a" href="https://www.facebook.com/profile.php?id=61575380657504" target="_blank">
                   <FaFacebookF className="social-icon" /> Follow Us facebook
                 </ListGroup.Item>
                 <ListGroup.Item as="a" href="https://in.pinterest.com/awakeningcoins/" target="_blank">
@@ -324,7 +325,7 @@ const handleSubmit = async (e) => {
                 <ListGroup.Item as="a" href="https://www.youtube.com/@AwakeningCoinsnew" target="_blank"> {/* Example YT Link */}
                   <FaYoutube className="social-icon" /> Follow Us YouTube
                 </ListGroup.Item>
-                <ListGroup.Item as="a" href="https://www.linkedin.com/in/awakening-coins-b61b2034a/" target="_blank">
+                <ListGroup.Item as="a" href="https://www.linkedin.com/in/awakening-coins-464104363/" target="_blank">
                   <FaLinkedinIn className="social-icon" /> Follow Us linkedin
                 </ListGroup.Item>
                 <ListGroup.Item as="a" href="https://www.instagram.com/awakeningcoinsnew/" target="_blank">
