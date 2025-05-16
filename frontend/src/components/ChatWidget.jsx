@@ -7,10 +7,10 @@ import ChatIcon from './ChatIcon';
 // --- Styles for ChatWindow (Example) ---
 const chatWindowStyle = {
     position: 'fixed',
-    bottom: '100px', // Above the icon
+    bottom: '90px', // Above the icon
     right: '30px',
     width: '350px',
-    height: '500px',
+    height: '400px',
     backgroundColor: 'white',
     boxShadow: '0 5px 15px rgba(0,0,0,0.3)',
     borderRadius: '10px',
